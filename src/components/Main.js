@@ -15,15 +15,15 @@ export default class Main extends Component {
 
     if (!tarefas) return;
 
-    this.setState({tarefas})
+    this.setState({ tarefas });
   }
 
-  componentDidUpdate(prevProps, prevState){
+  componentDidUpdate(prevProps, prevState) {
     const { tarefas } = this.state;
 
     if (tarefas === prevState) return;
 
-    localStorage.setItem('tarefas', JSON.stringify(tarefas))
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
   }
 
   handleChange = (e) => {
