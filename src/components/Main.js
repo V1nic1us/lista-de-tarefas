@@ -27,6 +27,7 @@ export default class Main extends Component {
     console.log('2 ->', novasTarefas);
     this.setState({
       tarefas: [...novasTarefas, novaTarefa],
+      novaTarefa: '',
     });
     console.log('3 ->', [...novasTarefas, novaTarefa]);
     console.log('4 ->', this.state.tarefas);
