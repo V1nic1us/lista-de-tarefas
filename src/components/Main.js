@@ -23,9 +23,7 @@ export default class Main extends Component {
     novaTarefa = novaTarefa.trim();
 
     if (tarefas.indexOf(novaTarefa) !== -1) return;
-    console.log('1 ->', tarefas);
     const novasTarefas = [...tarefas];
-    console.log('2 ->', novasTarefas);
 
     if (index === -1) {
       this.setState({
@@ -40,8 +38,6 @@ export default class Main extends Component {
         index: -1,
       });
     }
-    console.log('3 ->', [...novasTarefas, novaTarefa]);
-    console.log('4 ->', this.state.tarefas);
   };
 
   handleEdit = (e, index) => {
@@ -51,8 +47,6 @@ export default class Main extends Component {
       index,
       novaTarefa: tarefas[index],
     });
-
-    console.log('edit', index);
   };
 
   handleDelete = (e, index) => {
@@ -63,7 +57,6 @@ export default class Main extends Component {
     this.setState({
       tarefas: [...novasTarefas],
     });
-    console.log('delete');
   };
 
   render() {
