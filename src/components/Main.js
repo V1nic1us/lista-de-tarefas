@@ -10,6 +10,22 @@ export default class Main extends Component {
     index: -1,
   };
 
+  componentDidMount() {
+    const { tarefas } = JSON.parse(localStorage.getItem('tarefas'));
+
+    if (!tarefas) return;
+
+    this.setState({tarefas})
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    const { tarefas } = this.state;
+
+    if (tarefas === prevState) return;
+
+    localStorage.setItem('tarefas', JSON.stringify(tarefas))
+  }
+
   handleChange = (e) => {
     this.setState({
       novaTarefa: e.target.value,
